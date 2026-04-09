@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasks</title>
 
+<style>
+body {
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  font-family:Arial;
+}
+
+.card {
+  background:#1e293b;
+  margin:15px;
+  padding:15px;
+  border-radius:10px;
+}
+
+button {
+  padding:10px;
+  background:#22c55e;
+  border:none;
+  border-radius:8px;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<h2>🎯 Earn ION</h2>
+
+<div class="card">
+  Invite 1 Friend → +1 ION
+</div>
+
+<div class="card">
+  Invite 10 Friends → +3 ION Bonus
+</div>
+
+<button onclick="addReferral()">Simulate Referral</button>
+
+<script>
+function addReferral(){
+  let refs = parseInt(localStorage.getItem("refs") || 0);
+  let bal = parseInt(localStorage.getItem("balance") || 0);
+
+  refs++;
+  bal += 1;
+
+  if(refs === 10){
+    bal += 3;
+    alert("🔥 Bonus unlocked!");
+  }
+
+  localStorage.setItem("refs", refs);
+  localStorage.setItem("balance", bal);
+
+  alert("Referral added!");
+}
+</script>
+
+</body>
+</html>
