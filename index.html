@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creator Growth Hub</title>
 
+<style>
+body {
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+  text-align:center;
+}
+
+h1 {
+  margin-top:20px;
+}
+
+.card {
+  background:#1e293b;
+  margin:15px;
+  padding:15px;
+  border-radius:12px;
+}
+
+button {
+  padding:10px 20px;
+  margin:5px;
+  border:none;
+  border-radius:8px;
+  background:#22c55e;
+  color:white;
+  font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🚀 Creator Growth Hub</h1>
+
+<div class="card">
+  💰 Balance: <span id="balance">0</span> ION
+</div>
+
+<div class="card">
+  👥 Referrals: <span id="refs">0</span>
+</div>
+
+<div class="card">
+  <button onclick="goProfile()">👤 My Profile</button>
+  <button onclick="goTasks()">🎯 Earn Tasks</button>
+</div>
+
+<script>
+let balance = localStorage.getItem("balance") || 0;
+let refs = localStorage.getItem("refs") || 0;
+
+document.getElementById("balance").innerText = balance;
+document.getElementById("refs").innerText = refs;
+
+function goProfile(){
+  window.location.href = "profile.html";
+}
+
+function goTasks(){
+  window.location.href = "tasks.html";
+}
+</script>
+
+</body>
+</html>
