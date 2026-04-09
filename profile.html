@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile</title>
 
+<style>
+body {
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  font-family:Arial;
+}
+
+button {
+  display:block;
+  margin:10px auto;
+  padding:12px;
+  width:80%;
+  background:#ef4444;
+  border:none;
+  border-radius:10px;
+  color:white;
+}
+</style>
+</head>
+
+<body>
+
+<h2>👤 My Links</h2>
+
+<button onclick="openLink('https://t.me/yourprofile')">Follow Online+</button>
+<button onclick="openLink('https://youtube.com')">Subscribe YouTube</button>
+
+<script>
+function openLink(url){
+  window.open(url);
+
+  setTimeout(()=>{
+    let bal = parseInt(localStorage.getItem("balance") || 0);
+    bal += 1;
+    localStorage.setItem("balance", bal);
+    alert("✅ Task reward: +1 ION");
+  }, 8000);
+}
+</script>
+
+</body>
+</html>
